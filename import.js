@@ -15,7 +15,7 @@ function main() {
   const near = 0.1;
   const far = 1500;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(0, 200, 200);
+  camera.position.set(0, 400, 200);
 
   const controls = new OrbitControls(camera, canvas);
   controls.target.set(0, 5, 0);
@@ -73,7 +73,7 @@ function main() {
       objLoader.load('./Sillon test.obj', (object) => {
         
         myObj =object;
-        myObj.rotation.y = Math.PI/2;
+        myObj.rotation.y = Math.PI/4;
 
         scene.add(object);
       });
