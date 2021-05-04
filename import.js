@@ -73,7 +73,7 @@ function main() {
       objLoader.load('./Sillon test.obj', (object) => {
         
         myObj =object;
-        myObj.rotation.y = Math.PI/4;
+        myObj.rotation.y = Math.PI/2;
 
         scene.add(object);
       });
