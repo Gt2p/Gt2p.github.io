@@ -1,0 +1,18 @@
+# Rhino
+newmtl sofa navy blue
+Ka 0 0 0
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Tf 0 0 0
+d 1
+Ns 0
+map_Kd rdk$0200-0200-389DDBD5.png
+newmtl color estructura 2
+Ka 0 0 0
+Kd 0.482352941176471 0.450980392156863 0.396078431372549
+Ks 1 1 1
+Tf 0 0 0
+d 1
+Ns 0
+map_Kd rdk$0200-0200-A2B2EF42.png
+map_Bump rdk$0200-0200-A2B2EF42.png
