@@ -11,12 +11,12 @@ const simpleShadow = textureLoader.load('./texturas/simpleShadow.jpg')
 
 const colorstapiz = [
   {
-      texture: './Texturas/azul.jpg',
+      texture: './texturas/azul.jpg',
       size: [8, 8, 8],
       shininess: 15
   },
   {
-  texture: './Texturas/rosa.jpg',
+  texture: './texturas/rosa.jpg',
   size: [8, 8, 8],
   shininess: 0
 },
@@ -33,7 +33,7 @@ const colorstapiz = [
   ]
   const colorssoporte = [
     {
-        texture: './Texturas/madera.jpg',
+        texture: './texturas/madera.jpg',
         size: [2,2,2],
         shininess: 60
     },
