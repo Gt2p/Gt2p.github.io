@@ -1,9 +1,144 @@
-html, body {
-   margin: 0;
-   height: 100%;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #444444;
 }
-#c {
-   width: 100%;
-   height: 100%;
-   display: block;
+* {
+  touch-action: manipulation;
 }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+ #c {
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+.controltexturastapiz {
+  position: absolute;
+  bottom: 85%;
+  left: 75px;
+  width: 15%;
+  
+}
+
+.selectortapiz {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translateX(-0%);
+  animation: wheelin 0.2s 0.4s ease-in-out forwards;
+}
+.selector_swatchtapiz {
+  transition: 0.1s ease-in;
+  height: 55px;
+  min-width: 55px;
+  max-width: 55px;
+  flex: 1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-position: center;
+  border-radius: 46%;
+  margin-left: 13px;
+  margin-top: 13px;
+}
+.selector_swatchtapiz:hover {
+  margin-top: 9px;
+}
+
+.controltexturassoporte {
+  position: absolute;
+  bottom: 55%;
+  left: 75px;
+  width: 15%;
+  
+}
+
+.selectorsoporte {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translateX(-0%);
+  animation: wheelin 0.2s 0.4s ease-in-out forwards;
+}
+.selector_swatchsoporte {
+  transition: 0.1s ease-in;
+  height: 55px;
+  min-width: 55px;
+  max-width: 55px;
+  flex: 1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-position: center;
+  border-radius: 46%;
+  margin-left: 13px;
+  margin-top: 13px;
+}
+.selector_swatchsoporte:hover {
+  margin-top: 9px;
+}
+.modelos {
+    position: absolute;
+    bottom: 0;
+    
+    
+  }
+
+  .modelo {
+    background-size: cover;
+    background-position: 50%;
+    background-color: 0xf1f1f1;
+    margin-bottom: 5px;
+    padding: 2px;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    float: left;
+    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .modelo img {
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .modelo:hover img {
+
+    width: 80px;
+    opacity: 1;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }

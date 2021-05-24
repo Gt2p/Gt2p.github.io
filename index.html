@@ -1,13 +1,62 @@
-<html>
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-      <title>Three.js - Modelo de prueba</title>
-      
-    </head>
-    <body>
-      <script  type="module" src="./import.js"></script>
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <canvas id="c"></canvas>
-    </body>
-  </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Imporant meta information to make the page as rigid as possible on mobiles, to avoid unintentional zooming on the page itself  -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>¨Plataforma Interactiva - Gt2p</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<div class="controltexturastapiz">
+    <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
+         <div id="texturasjstapiz" class="selectortapiz"></div>
+    </div>
+<div class="controltexturassoporte">
+    <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
+         <div id="texturasjssoporte" class="selectorsoporte"></div>
+    </div>
+<!-- Menu de modelos  -->
+<div class="modelos">
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="break"></div>
+    
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt4ci01">
+        <img src="./Botones/pt4ci01.png" alt=""/>
+    </div>
+</div>
+
+<canvas id="c"></canvas>
+
+<script  type="module" src="./main.js"></script>
+
+</body>
+</html>
