@@ -269,8 +269,7 @@ function buildColorstapiz(colors) {
     swatch.classList.add('selector_swatchtapiz');
     
     if (color.texture)  {
-
-        swatch.style.backgroundImage = "color.texture";   
+        swatch.style.backgroundImage = "url(" + color.texture + ")";
       } else
       {
         swatch.style.background = "#" + color.color;
@@ -325,8 +324,7 @@ function buildColorssoporte(colors) {
     swatch.classList.add('selector_swatchsoporte');
     
     if (color.texture)  {
-
-        swatch.style.backgroundImage = "color.texture";   
+        swatch.style.backgroundImage = "url(" + color.texture + ")";
       } else
       {
         swatch.style.background = "#" + color.color;
