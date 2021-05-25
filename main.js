@@ -326,7 +326,7 @@ function buildColorssoporte(colors) {
     
     if (color.texture)  {
 
-        swatch.style.backgroundImage = "url(" + color.texture + ")";   
+        swatch.style.backgroundImage = " color.texture";   
       } else
       {
         swatch.style.background = "#" + color.color;
