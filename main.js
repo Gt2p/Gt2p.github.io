@@ -21,7 +21,7 @@ const colorstapiz = [
   },{
   texture: './texturas/kvverde.jpg',
   size: [21, 21, 21],
-  shininess: 31
+  shininess: 30
   },{
         texture: './texturas/gris.jpg',
         size: [21, 21, 21],
