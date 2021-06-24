@@ -43,7 +43,7 @@ body {
 .info {
   position: absolute;
   left: 75px;
-  bottom: 30px;
+  bottom: 31px;
   padding: 0 1em;
   line-height: 200%;
   display: flex;
