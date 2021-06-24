@@ -34,6 +34,26 @@ body {
   top: 0;
   left: 0;
 }
+#dd {
+  position: absolute;
+  left: 500px;
+  top: 500px;
+}
+
+.info {
+  position: absolute;
+  left: 75px;
+  bottom: 30px;
+  padding: 0 1em;
+  line-height: 200%;
+  display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
 
 .controltexturastapiz {
   position: absolute;
@@ -52,16 +72,16 @@ body {
 }
 .selector_swatchtapiz {
   transition: 0.1s ease-in;
-  height: 55px;
-  min-width: 55px;
-  max-width: 55px;
+  height: 50px;
+  min-width: 50px;
+  max-width: 50px;
   flex: 1;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); */
   background-size: cover;
   background-position: center;
-  border-radius: 46%;
-  margin-left: 13px;
-  margin-top: 13px;
+  border-radius: 25%;
+  margin-left: 18px;
+  margin-top: 18px;
 }
 .selector_swatchtapiz:hover {
   margin-top: 9px;
@@ -84,16 +104,16 @@ body {
 }
 .selector_swatchsoporte {
   transition: 0.1s ease-in;
-  height: 55px;
-  min-width: 55px;
-  max-width: 55px;
+  height: 50px;
+  min-width: 50px;
+  max-width: 50px;
   flex: 1;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); */
   background-size: cover;
   background-position: center;
-  border-radius: 46%;
-  margin-left: 13px;
-  margin-top: 13px;
+  border-radius: 25%;
+  margin-left: 18px;
+  margin-top: 18px;
 }
 .selector_swatchsoporte:hover {
   margin-top: 9px;
@@ -142,3 +162,4 @@ body {
     flex-basis: 100%;
     height: 0;
   }
+  

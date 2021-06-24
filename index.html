@@ -9,53 +9,83 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>¨Plataforma Interactiva - Gt2p</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+    <link href="./radialMenu.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
 <div class="controltexturastapiz">
+    <p><strong>&nbsp;Upholstery: &nbsp;</strong></p>
     <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
          <div id="texturasjstapiz" class="selectortapiz"></div>
     </div>
 <div class="controltexturassoporte">
+    <p><strong>&nbsp;Supports: &nbsp;</strong></p>
     <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
          <div id="texturasjssoporte" class="selectorsoporte"></div>
     </div>
 <!-- Menu de modelos  -->
 <div class="modelos">
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
+    <div class="modelo" data-option="pt1ci01">
+        <img src="./Botones/pt1ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt1ci02">
+        <img src="./Botones/pt1ci02.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt2ci01">
+        <img src="./Botones/pt2ci01.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="pt3ci01">
+        <img src="./Botones/pt3ci01.png" alt=""/>
     </div>
     <div class="modelo" data-option="pt4ci01">
         <img src="./Botones/pt4ci01.png" alt=""/>
     </div>
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
+    <div class="modelo" data-option="ptcd101">
+        <img src="./Botones/ptcd101.png" alt=""/>
     </div>
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
-    </div>
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
-    </div>
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
-    </div>
+
     <div class="break"></div>
-    
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
+    <div class="modelo" data-option="pt4ci02">
+        <img src="./Botones/pt4ci02.png" alt=""/>
     </div>
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
+    <div class="modelo" data-option="ptcd201">
+        <img src="./Botones/ptcd201.png" alt=""/>
     </div>
-    <div class="modelo" data-option="pt4ci01">
-        <img src="./Botones/pt4ci01.png" alt=""/>
+    <div class="modelo" data-option="ptcd301">
+        <img src="./Botones/ptcd301.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="ptct101">
+        <img src="./Botones/ptct101.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="ptct201">
+        <img src="./Botones/ptct201.png" alt=""/>
+    </div>
+    <div class="modelo" data-option="ptct301">
+        <img src="./Botones/ptct301.png" alt=""/>
     </div>
 </div>
+    
+<div class="info">
+    <p><strong>&nbsp;Controles:  E: &nbsp;</strong>Eliminar objeto. <strong>&nbsp;R: &nbsp;</strong> Rotar objeto. <strong>&nbsp;T: &nbsp;</strong>Invertir Objeto.<br><strong>&nbsp;S: &nbsp;</strong>Activar/Desactivar snaps.</p>
+</div>   
 
 <canvas id="c"></canvas>
-
+<div id="dd">
+<!--     <div class="radial menu" title="Click To Open">
+        <input id="radialMenu" type="checkbox">
+        <label class="radialPivot" for="radialMenu">
+          <span class="far fa-compass">A</span>
+          <span class="sronly">Show menu items</span>
+        </label>
+        <ul class="radialList compass" role="navigation" aria-label="menu items">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          ...
+        </ul>
+      </div> -->
+</div>
 <script  type="module" src="./main.js"></script>
 
 </body>
