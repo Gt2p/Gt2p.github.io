@@ -291,7 +291,7 @@ document.addEventListener('keydown', function (event) {
   //  cambiarmaterial();
     rotar();
   }
-  if (event.key === 't'||'T') {
+  if (event.key === 't') {
       flip();
     }
   if (event.key === 'e') {
