@@ -2,6 +2,7 @@ import * as THREE from './three.js-master/build/three.module.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 
+
 // texturas load
 const textureLoader = new THREE.TextureLoader()
 const simpleShadow = textureLoader.load('./texturas/simpleShadow.jpg')
@@ -54,18 +55,18 @@ const colorstapiz = [
      
 //Modelos
 const modelos = []
-var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012};
-var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02};
-var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512};
-var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012};
-var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512};
-var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512};
-var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012};
-var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012};
-var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012};
-var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012};
-var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012};
-var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012};
+var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false};
+var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false};
+var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false};
+var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false};
+var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false};
+var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false};
+var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false};
+var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false};
+var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false};
+var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false};
+var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false};
+var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false};
 
 const catalogo = [pt1ci01,pt1ci02,pt2ci01,pt3ci01,pt4ci01,pt4ci02,ptcd101,ptcd201,ptcd301,ptct101,ptct201,ptct301]
 
@@ -125,12 +126,13 @@ scene.add(floor);
 
 // Add controls
 var controls = new OrbitControls( camera, renderer.domElement );
-controls.maxPolarAngle = Math.PI / 2;
+controls.maxPolarAngle = Math.PI / 1.95;
 controls.minPolarAngle = Math.PI / 4.5;
 controls.enableDamping = true;
 controls.enablePan =  true;
 controls.dampingFactor = 0.15;
-
+controls.maxDistance = 2.5
+controls.maxDistance = 10.5
 //Las lineas de abajo intentan resolver el bug al orbitar la camara
 controls.addEventListener( 'change', test);
 controls.addEventListener( 'end', test2);
@@ -202,7 +204,7 @@ scene.add(redcircle)
 let addedvectors = new THREE.Vector3( );
 addedvectors.set(0,0,0)
 function centercamera(){
- if (modelos.length<=1){
+ if (modelos.length<1){
 
  } 
  else{
@@ -282,6 +284,10 @@ function remove(){
    modelos.splice(modeloselecto,1)
     cantake = false
     modeloselecto = null
+    setTimeout(function() {
+      compileList()
+    }, 30);
+    centercamera()
   }
 }
 
@@ -291,7 +297,7 @@ document.addEventListener('keydown', function (event) {
   //  cambiarmaterial();
     rotar();
   }
-  if (event.key === 't'||'T') {
+  if (event.key === 't') {
       flip();
     }
   if (event.key === 'e') {
@@ -302,7 +308,11 @@ document.addEventListener('keydown', function (event) {
  }  
  if (event.key === 's') {
   activarSnap();
-}  
+} 
+ if (event.key === 'd') {
+  compileList();
+}   
+
 }); 
 
 window.addEventListener('click', toque)
@@ -313,19 +323,23 @@ for (const option of options) {
 
 function crear(e){
 
-  
+
+
+let maxz = 0;  
 let option = e.target.dataset.option;
 for (var c of catalogo){
   if (c.name==option){
     let x = c.x
     let y = c.y
     let z = c.z
+    let name = c.name
+    let price = c.price
     const geometry = new THREE.BoxBufferGeometry( c.x, c.y, c.z, 1)
     const materials = new THREE.MeshBasicMaterial( {color: 0xffff00} )
     materials.transparent= true
     materials.opacity= 0.00
     materials.visible = false
-  
+
     const INITIAL_MAP = [
       { childID: "soporte", mtl: INITIAL_MTL_soporte },
       { childID: "tapiz", mtl: INITIAL_MTL_tapiz },];
@@ -333,8 +347,33 @@ for (var c of catalogo){
     let i = modelos.length;
   
     modelos [i] = new THREE.Mesh( geometry, materials)
-    modelos [i].position.copy(redcircle.position);
+    if (modelos.length<=1){
+      modelos [i].position.set(0,redcircle.position.y,0);
+      centercamera()
+    } 
+    else{
+      for (var modelo of modelos){
+        addedvectors.add(modelo.position)
+        if(maxz<modelo.position.z){
+          maxz = modelo.position.z
+        }
+      }
+      modelos [i].position.set(addedvectors.x/modelos.length,redcircle.position.y,(maxz)+2.1)
+      addedvectors.set(0,0,0)
+      maxz = 0
+      centercamera()
+    }
     modelos [i].userData = [c.x,c.z]
+    let d1 = null
+    if(c.loaded==false){
+      d1 = document.createElement('div');
+      d1.className = 'loading';
+      let d2 = document.createElement('div');
+      d2.className = 'loader';
+      document.getElementsByTagName('body')[0].appendChild(d1);
+      d1.appendChild(d2);
+      c.loaded = true;
+    }
     
     loader.load(c.path, function (gltf) {  
       gltf.scene.traverse(o => {
@@ -349,18 +388,30 @@ for (var c of catalogo){
       
       modelos[i].add(gltf.scene)
       scene.add(modelos[i]);
-      objectsToTest.push(modelos[i]);
+      if (d1 !== null){
+        d1.remove();
+        
+      }
       
+      objectsToTest.push(modelos[i]);
+      modelos [i].userData.push (name)
+      modelos [i].userData.push (price)
       // Set initial textures
       for (let object of INITIAL_MAP) {
         initColor(gltf.scene, object.childID, object.mtl);
       }
-    
     }, undefined, function (error) {
       console.error(error);
     });
+    
   }
+  
 }
+console.log(modelos)
+setTimeout(function() {
+  compileList()
+}, 30);
+
 }
     // Function - Add the textures to the models
     function initColor(parent, type, mtl) {
@@ -373,28 +424,7 @@ for (var c of catalogo){
         }
       });
     }
-/*     const geometry = new THREE.SphereGeometry( 0.1, 32, 32 );
-    const materials = new THREE.MeshBasicMaterial( {color: 0xffff00} )
-    var coso = new THREE.Mesh( geometry, materials)
-    materials.transparent= false
-    materials.opacity= 1.0
-    scene.add(coso); */
 
-    /*
-    //aqui agregue un cubo amarillo para probar los click
-
-    const geometry = new THREE.BoxBufferGeometry( 1.25, 0.76, 1.75, 1)
-    const materials = new THREE.MeshBasicMaterial( {color: 0xffff00} )
-    materials.transparent= false
-    materials.opacity= 1.0
-    
-  modelos [0] = new THREE.Mesh( geometry, materials)
-  modelos [0].position.set(0, -0.6, 0.5);
-  modelos [0].rotation.y = Math.PI/4;
-  scene.add(modelos [0]);
-          moveractivado()
-      console.log(cantake);
-  */
 function cambiarmaterial(){
   if (modelos[1] == null){
     // your code here.
@@ -491,6 +521,7 @@ function testCollision(otro) {
         modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz+selz);
        }
       snaped = true
+      modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
       }
       else if (MB<umbralmouse){
        if(CB<umbralsnap){
@@ -503,6 +534,7 @@ function testCollision(otro) {
         modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z+otroz+selz);
        }
       snaped = true
+      modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
       }
 
        else if (MC<umbralmouse){
@@ -516,6 +548,7 @@ function testCollision(otro) {
          modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z+otroz+selz);
         }
        snaped = true
+       modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
        }
       else if (MD<umbralmouse){
         if(CD<umbralsnap){
@@ -528,6 +561,7 @@ function testCollision(otro) {
          modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz+selz);
         }
        snaped = true
+       modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
        }
       else {
         if (snaped == false){
@@ -786,6 +820,87 @@ function menu(){
   else {
     menuActivado = false;  
     document.getElementById("dd").innerHTML = "";
+  }
+}
+
+let listaActivado = true;
+function compileList(){
+  if(listaActivado==true){
+    document.getElementById("items").innerHTML = "";
+    var nuevoname = document.createElement("LI");
+    nuevoname.className = 'nombres';
+    var nuevoprice = document.createElement("LI");
+    nuevoprice.className = 'precios';
+    document.getElementById("items").appendChild(nuevoname);
+    document.getElementById("items").appendChild(nuevoprice);
+    for (var i = 0; i < modelos.length; i++){
+      let name = modelos[i].userData[2]
+    
+      let price = modelos[i].userData[3]
+
+      var nuevonamet = document.createTextNode(name);
+
+      var nuevopricet = document.createTextNode(price);
+      var brt = document.createElement('br');
+      var brp = document.createElement('br');
+      nuevoname.appendChild(nuevonamet);
+      nuevoprice.appendChild(nuevopricet);
+      nuevoname.appendChild(brt);
+      nuevoprice.appendChild(brp);
+    }
+    /*
+    
+     for (var m = 0; m < objectsToTest.length; m++){
+    if(objectsToTest[m].uuid==modelos[modeloselecto].uuid){
+     objectsToTest.splice(m,1)
+    }
+    
+    document.getElementById("dd").style.left = mouseX+'px';
+    document.getElementById("dd").style.top = mouseY+'px';
+
+    var menu = document.createElement('div');
+    menu.className = 'radial menu';
+    menu.title = "Click To Open";
+    var inp = document.createElement("INPUT");
+    inp.id = 'radialMenu';
+    inp.setAttribute("type", "checkbox");
+    menu.appendChild(inp);
+    var lab = document.createElement("LABEL");
+    lab.className = 'radialPivot';
+    lab.htmlFor = 'radialMenu';
+    menu.appendChild(lab);
+    var span1 = document.createElement("SPAN");
+    span1.className = 'far fa-compass';
+    var span1icon = document.createTextNode("A");
+    span1.appendChild(span1icon);
+    lab.appendChild(span1);
+    var span2 = document.createElement("SPAN");
+    span2.className = 'sronly';
+    var span2t = document.createTextNode("Show menu items");
+    span2.appendChild(span2t);
+    lab.appendChild(span2);
+    var ul = document.createElement("UL");
+    ul.className = 'radialList compass';
+    ul.setAttribute("role", "navigation");
+    ul.ariaLabel = "menu items"
+    menu.appendChild(ul);
+  
+    var i1 = document.createElement("LI");
+    var t1 = document.createTextNode("item 1");
+    i1.appendChild(t1);
+    var i2 = document.createElement("LI");
+    var t2 = document.createTextNode("item 2");
+    i2.appendChild(t2);
+    var i3 = document.createElement("LI");
+    var t3 = document.createTextNode("item 3");
+    i3.appendChild(t3);
+    ul.appendChild(i1);
+    ul.appendChild(i2);
+    ul.appendChild(i3);
+  
+    document.getElementById("dd").appendChild(menu); */
+  }
+  else {
   }
 }
 

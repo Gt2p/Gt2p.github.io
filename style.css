@@ -3,9 +3,11 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: "Courier New", Courier, monospace;
   font-size: 14px;
-  color: #444444;
+
+  color: #0c0c0c;
 }
 * {
   touch-action: manipulation;
@@ -41,8 +43,9 @@ body {
 }
 
 .info {
+  font-size: 0.9vw;
   position: absolute;
-  left: 75px;
+  left: 3%;
   bottom: 30px;
   padding: 0 1em;
   line-height: 200%;
@@ -55,11 +58,72 @@ body {
   user-select: none;
 }
 
-.controltexturastapiz {
+#list {
   position: absolute;
-  bottom: 85%;
-  left: 75px;
-  width: 15%;
+  right: 0%;
+  top: 6%;
+  padding: 0 1em;
+  line-height: 200%;
+  display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#items {
+  position: relative;
+  right: 25%;
+  top: 30px;
+  padding: 0 1em;
+  line-height: 200%;
+  display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.nombres {
+  position: relative;
+  right: 0px;
+  top: 20%;
+  padding: 0 1em;
+  line-height: 200%;
+  display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.precios {
+  position: relative;
+  right: 0px;
+  top: 20%;
+  padding: 0 1em;
+  line-height: 200%;
+  display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.thick {
+  font-weight: 1600;
+}
+
+.controltexturastapiz {
+  
+  position: absolute;
+  bottom: 88%;
+  left: 3%;
+  width: 15vw;
   
 }
 
@@ -88,9 +152,10 @@ body {
 }
 
 .controltexturassoporte {
+  font-weight: 900;
   position: absolute;
   bottom: 55%;
-  left: 75px;
+  left: 3%;
   width: 15%;
   
 }
@@ -120,9 +185,7 @@ body {
 }
 .modelos {
     position: absolute;
-    bottom: 0;
-    
-    
+      bottom: 30px;
   }
 
   .modelo {
@@ -131,8 +194,8 @@ body {
     background-color: 0xf1f1f1;
     margin-bottom: 5px;
     padding: 2px;
-    height: 80px;
-    width: 80px;
+    height: 5.4vw;
+    width: 5.4vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +217,7 @@ body {
   }
   .modelo:hover img {
 
-    width: 80px;
+    width: 5.4vw;;
     opacity: 1;
   }
 
