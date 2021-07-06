@@ -324,7 +324,7 @@ for (const option of options) {
 function crear(e){
 
 
-
+let compiledelay = 50
 let maxz = 0;  
 let option = e.target.dataset.option;
 for (var c of catalogo){
@@ -339,7 +339,7 @@ for (var c of catalogo){
     materials.transparent= true
     materials.opacity= 0.00
     materials.visible = false
-    let compiledelay = 50
+   
     const INITIAL_MAP = [
       { childID: "soporte", mtl: INITIAL_MTL_soporte },
       { childID: "tapiz", mtl: INITIAL_MTL_tapiz },];
