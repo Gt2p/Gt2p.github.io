@@ -41,7 +41,12 @@ body {
   left: 500px;
   top: 500px;
 }
-
+#shot {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
+}
 .info {
   font-size: 0.9vw;
   position: absolute;

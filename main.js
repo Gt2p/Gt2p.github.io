@@ -339,7 +339,7 @@ for (var c of catalogo){
     materials.transparent= true
     materials.opacity= 0.00
     materials.visible = false
-
+    let compiledelay = 50
     const INITIAL_MAP = [
       { childID: "soporte", mtl: INITIAL_MTL_soporte },
       { childID: "tapiz", mtl: INITIAL_MTL_tapiz },];
@@ -373,6 +373,7 @@ for (var c of catalogo){
       document.getElementsByTagName('body')[0].appendChild(d1);
       d1.appendChild(d2);
       c.loaded = true;
+      compiledelay = 1500
     }
     
     loader.load(c.path, function (gltf) {  
@@ -410,7 +411,7 @@ for (var c of catalogo){
 console.log(modelos)
 setTimeout(function() {
   compileList()
-}, 30);
+}, compiledelay);
 
 }
     // Function - Add the textures to the models
@@ -734,6 +735,51 @@ function toque(){
          }
        }
       }
+
+document.getElementById("shot").addEventListener('click', takeScreenshot);
+function takeScreenshot() {
+  // open in new window like this
+  //
+  /*
+    var w = window.open('', '');
+    w.document.title = "Screenshot";
+    //w.document.body.style.backgroundColor = "red";
+    var img = new Image();
+    // Without 'preserveDrawingBuffer' set to true, we must render now
+    renderer.render(scene, camera);
+    img.src = renderer.domElement.toDataURL();
+    w.document.body.appendChild(img);  
+*/
+  var w = window.open('', '');
+  w.document.title = "Screenshot";
+  //w.document.body.style.backgroundColor = "red";
+  var img = new Image();
+  renderer.render(scene, camera);
+  img.src = renderer.domElement.toDataURL();
+  w.document.body.appendChild(img);  
+  /*
+      // download file like this.
+      //
+      var a = document.createElement('a');
+      // Without 'preserveDrawingBuffer' set to true, we must render now
+      renderer.render(scene, camera);
+      a.href = renderer.domElement.toDataURL().replace("image/png", "image/octet-stream");
+      a.download = 'canvas.png'
+      a.click();
+  */
+  // New version of file download using toBlob.
+  // toBlob should be faster than toDataUrl.
+  // But maybe not because also calling createOjectURL.
+  //
+  renderer.render(scene, camera);
+  renderer.domElement.toBlob(function(blob) {
+    var a = document.createElement('a');
+    var url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = 'Captura.png';
+    a.click();
+  }, 'image/png', 1.0);
+}
 /*        
 function setMaterial(parent, type, mtl) {
     parent.traverse((o) => {
