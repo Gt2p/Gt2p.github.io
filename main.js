@@ -373,7 +373,7 @@ for (var c of catalogo){
       document.getElementsByTagName('body')[0].appendChild(d1);
       d1.appendChild(d2);
       c.loaded = true;
-      compiledelay = 1500
+      compiledelay = 1000
     }
     
     loader.load(c.path, function (gltf) {  
