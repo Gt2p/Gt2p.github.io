@@ -410,18 +410,17 @@ for (var c of catalogo){
       objectsToTest.push(modelos[i]);
       modelos [i].userData.push (name)
       modelos [i].userData.push (price)
+      if (d1 !== null){
+        d1.remove();
+      }
       // Set initial textures
       for (let object of INITIAL_MAP) {
         initColor(gltf.scene, object.childID, object.mtl);
       }
-
     }, undefined, function (error) {
       console.error(error);
     });
-    if (d1 !== null){
-      d1.remove();
-      compileList()
-    }
+    
   }
   
 }
