@@ -407,7 +407,7 @@ for (var c of catalogo){
       scene.add(modelos[i]);
       if (d1 !== null){
         d1.remove();
-        
+        compileList()
       }
       
       objectsToTest.push(modelos[i]);
