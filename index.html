@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
     <link href="./radialMenu.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="html2canvas.js"></script>
+
     <style>
         .loading {
           position: fixed;
@@ -40,7 +42,7 @@
           top: 25px;
           width: 25px;
           height: 25px;
-          background-color: #ff0000;
+          background-color: #222c64;
           animation: flip 1s infinite;
         }
         
@@ -61,12 +63,12 @@
 </head>
 <body> <!-- <div class="loading" id="js-loader"><div class="loader"></div></div> -->
 <div class="controltexturastapiz">
-    <p><b>Upholstery: </b></p>
+    <p><b>Tapiz: </b></p>
     <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
          <div id="texturasjstapiz" class="selectortapiz"></div>
     </div>
 <div class="controltexturassoporte">
-    <p><b>Supports:</b> </p>
+    <p><b>Base:</b> </p>
     <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
          <div id="texturasjssoporte" class="selectorsoporte"></div>
     </div>
@@ -91,6 +93,9 @@
     <div class="modelo" data-option="ptcd101">
         <img src="./Botones/ptcd101.png" alt=""/>
     </div>
+    <div class="modelo" data-option="pt3ci02">
+      <img src="./Botones/pt3ci02.png" alt=""/>
+    </div>
 
     <div class="break"></div>
     <div class="modelo" data-option="pt4ci02">
@@ -111,8 +116,11 @@
     <div class="modelo" data-option="ptct301">
         <img src="./Botones/ptct301.png" alt=""/>
     </div>
+    <div class="modelo" data-option="esquina">
+      <img src="./Botones/esquina.png" alt=""/>
+  </div>
 </div>
-    
+
 <div class="info">
     <p><strong>&nbsp;Controles:  E: &nbsp;</strong>Eliminar objeto. <strong>&nbsp;R: &nbsp;</strong> Rotar objeto. <br><strong>&nbsp;T: &nbsp;</strong>Invertir Objeto.<strong>&nbsp;S: &nbsp;</strong>Activar/Desactivar snaps.</p>
 </div>
@@ -120,7 +128,8 @@
 <div id="list">
     <p><strong>&nbsp;Modelos: &nbsp;</strong></p>
     <div id="items">
-    </div>   
+    </div>
+    <p id="total"><strong>&nbsp;Total: &nbsp;</strong></p>   
 </div>   
 <canvas id="c"></canvas>
 <div id="dd">

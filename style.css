@@ -48,7 +48,7 @@ body {
   margin: 5px;
 }
 .info {
-  font-size: 0.9vw;
+  font-size: 0.87vw;
   position: absolute;
   left: 3%;
   bottom: 30px;
@@ -65,11 +65,10 @@ body {
 
 #list {
   position: absolute;
-  right: 0%;
+  right: 6%;
   top: 6%;
-  padding: 0 1em;
-  line-height: 200%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -79,10 +78,8 @@ body {
 }
 #items {
   position: relative;
-  right: 25%;
-  top: 30px;
-  padding: 0 1em;
-  line-height: 200%;
+  right: 0%;
+  top: 0px;
   display: flex;
   justify-content: flex-end;
   -moz-user-select: -moz-none;
@@ -94,10 +91,11 @@ body {
 .nombres {
   position: relative;
   right: 0px;
-  top: 20%;
+  top: 0px;
   padding: 0 1em;
-  line-height: 200%;
+  line-height: 150%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -108,10 +106,11 @@ body {
 .precios {
   position: relative;
   right: 0px;
-  top: 20%;
+  top: 0px;
   padding: 0 1em;
-  line-height: 200%;
+  line-height: 150%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -119,16 +118,13 @@ body {
   -o-user-select: none;
   user-select: none;
 }
-.thick {
-  font-weight: 1600;
-}
 
 .controltexturastapiz {
   
   position: absolute;
   bottom: 88%;
-  left: 3%;
-  width: 15vw;
+  left: 2%;
+  width: 10vw;
   
 }
 
@@ -141,9 +137,9 @@ body {
 }
 .selector_swatchtapiz {
   transition: 0.1s ease-in;
-  height: 50px;
-  min-width: 50px;
-  max-width: 50px;
+  height: 2.8vw;
+  min-width: 2.8vw;
+  max-width: 2.8vw;
   flex: 1;
   /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); */
   background-size: cover;
@@ -160,8 +156,8 @@ body {
   font-weight: 900;
   position: absolute;
   bottom: 55%;
-  left: 3%;
-  width: 15%;
+  left: 2%;
+  width: 10vw;
   
 }
 
@@ -174,9 +170,9 @@ body {
 }
 .selector_swatchsoporte {
   transition: 0.1s ease-in;
-  height: 50px;
-  min-width: 50px;
-  max-width: 50px;
+  height: 2.8vw;
+  min-width: 2.8vw;
+  max-width: 2.8vw;
   flex: 1;
   /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); */
   background-size: cover;
@@ -191,6 +187,7 @@ body {
 .modelos {
     position: absolute;
       bottom: 30px;
+      left: 36%;
   }
 
   .modelo {
@@ -199,8 +196,8 @@ body {
     background-color: 0xf1f1f1;
     margin-bottom: 5px;
     padding: 2px;
-    height: 5.4vw;
-    width: 5.4vw;
+    height: 5.2vw;
+    width: 5.2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,7 +219,7 @@ body {
   }
   .modelo:hover img {
 
-    width: 5.4vw;;
+    width: 5.2vw;;
     opacity: 1;
   }
 

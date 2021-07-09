@@ -12,25 +12,25 @@ const colorstapiz = [
       size: [8, 8, 8],
       shininess: 25
   },{
-      texture: './texturas/aqteal.jpg',
-      size: [20,20, 20],
-      shininess: 40
+      texture: './texturas/azulmarino.jpg',
+      size: [8, 8, 8],
+      shininess: 42
   },{
-  texture: './texturas/rosa.jpg',
-  size: [8, 8, 8],
-  shininess: 0
+     texture: './texturas/gris.jpg',
+     size: [8, 8, 8],
+     shininess: 27
   },{
-  texture: './texturas/kvverde.jpg',
-  size: [21, 21, 21],
-  shininess: 30
+     texture: './texturas/grisoscuro.jpg',
+      size: [8, 8, 8],
+     shininess: 27
   },{
-        texture: './texturas/gris.jpg',
-        size: [21, 21, 21],
-       shininess: 30
+        texture: './texturas/verde.jpg',
+       size: [7, 7, 7],
+      shininess: 33
   },{
-      color: '173A2F'
-  },{
-      color: '153944'
+    texture: './texturas/claro.jpg',
+    size: [8, 8, 8],
+    shininess: 27
   }
  ]
   const colorssoporte = [
@@ -39,15 +39,25 @@ const colorstapiz = [
         size: [2,2,2],
         shininess: 60
     },{
-        color: 'B67F45'
+        texture: './texturas/maderaazul.jpg',
+        size: [3,3,3],
+        shininess: 60
     },{
-        color: 'EE9973'
+       texture: './texturas/maderaamarillo.jpg',
+       size: [2,2,2],
+       shininess: 60
     },{
-        color: 'B4A7D6'
+       texture: './texturas/maderagris.jpg',
+       size: [2,2,2],
+       shininess: 60
     },{
-        color: '27548D'
+        texture: './texturas/walnut.jpg',
+        size: [6,6,6],
+        shininess: 60
     },{
-        color: '438AAC'
+        texture: './texturas/lightbirch.jpg',
+       size: [6,6,6],
+        shininess: 42
     }  
     ]
   const bandejatapiz = document.getElementById('texturasjstapiz')
@@ -59,6 +69,7 @@ var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.0
 var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false};
 var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false};
 var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false};
+var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false};
 var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false};
 var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false};
 var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false};
@@ -67,8 +78,9 @@ var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.01
 var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false};
 var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false};
 var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false};
+var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false};
 
-const catalogo = [pt1ci01,pt1ci02,pt2ci01,pt3ci01,pt4ci01,pt4ci02,ptcd101,ptcd201,ptcd301,ptct101,ptct201,ptct301]
+const catalogo = [pt1ci01,pt1ci02,pt2ci01,pt3ci01,pt3ci02,pt4ci01,pt4ci02,ptcd101,ptcd201,ptcd301,ptct101,ptct201,ptct301,esquina]
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
@@ -80,7 +92,7 @@ scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 const canvas = document.querySelector('#c');
         alphaMap: simpleShadow
 // Init the renderer
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true});
 
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -126,13 +138,13 @@ scene.add(floor);
 
 // Add controls
 var controls = new OrbitControls( camera, renderer.domElement );
-controls.maxPolarAngle = Math.PI / 1.95;
+controls.maxPolarAngle = Math.PI/2.1 
 controls.minPolarAngle = Math.PI / 4.5;
 controls.enableDamping = true;
 controls.enablePan =  true;
 controls.dampingFactor = 0.15;
 controls.maxDistance = 2.5
-controls.maxDistance = 10.5
+controls.maxDistance = 12.5
 //Las lineas de abajo intentan resolver el bug al orbitar la camara
 controls.addEventListener( 'change', test);
 controls.addEventListener( 'end', test2);
@@ -224,15 +236,19 @@ function moveractivado(){
         cantake = false
         modeloselecto = null
         centercamera()
+        compileList()
     }
     else{
         cantake= true
+        compileList()
     }
   }
   else{
     cantake = true
+    compileList()
    // console.log(modelos[modeloselecto])
   }
+  
 }
 // Select Option
 const options = document.querySelectorAll(".modelo");
@@ -750,13 +766,35 @@ function takeScreenshot() {
     img.src = renderer.domElement.toDataURL();
     w.document.body.appendChild(img);  
 */
-  var w = window.open('', '');
+/*   var w = window.open('', '');
   w.document.title = "Screenshot";
   //w.document.body.style.backgroundColor = "red";
   var img = new Image();
   renderer.render(scene, camera);
   img.src = renderer.domElement.toDataURL();
-  w.document.body.appendChild(img);  
+  w.document.body.appendChild(img);   */
+
+  renderer.preserveDrawingBuffer = true;
+  renderer.render(scene, camera)
+  html2canvas(document.body).then(function(canvas) {
+    
+    document.body.appendChild(canvas);
+    var w = window.open('', '');
+    w.document.title = "Screenshot";
+    w.document.body.appendChild(canvas);
+
+    canvas.toBlob(function(blob) {
+      var a = document.createElement('a');
+      var url = URL.createObjectURL(blob);
+      a.href = url;
+      a.download = 'Captura.png';
+      a.click();
+
+    
+    }, 'image/png', 1.0);  
+    
+   });
+   renderer.preserveDrawingBuffer = false; 
   /*
       // download file like this.
       //
@@ -771,14 +809,14 @@ function takeScreenshot() {
   // toBlob should be faster than toDataUrl.
   // But maybe not because also calling createOjectURL.
   //
-  renderer.render(scene, camera);
+/*   renderer.render(scene, camera);
   renderer.domElement.toBlob(function(blob) {
     var a = document.createElement('a');
     var url = URL.createObjectURL(blob);
     a.href = url;
     a.download = 'Captura.png';
     a.click();
-  }, 'image/png', 1.0);
+  }, 'image/png', 1.0); */
 }
 /*        
 function setMaterial(parent, type, mtl) {
@@ -871,82 +909,50 @@ function menu(){
 
 let listaActivado = true;
 function compileList(){
+  let total = 0
   if(listaActivado==true){
     document.getElementById("items").innerHTML = "";
-    var nuevoname = document.createElement("LI");
-    nuevoname.className = 'nombres';
-    var nuevoprice = document.createElement("LI");
-    nuevoprice.className = 'precios';
-    document.getElementById("items").appendChild(nuevoname);
-    document.getElementById("items").appendChild(nuevoprice);
+    var names = document.createElement("LI");
+    names.className = 'nombres';
+    var prices = document.createElement("LI");
+    prices.className = 'precios';
+    document.getElementById("items").appendChild(names);
+    document.getElementById("items").appendChild(prices);
     for (var i = 0; i < modelos.length; i++){
+
       let name = modelos[i].userData[2]
     
       let price = modelos[i].userData[3]
+      
+      total += price
+      var nuevoname = document.createElement("P");
 
       var nuevonamet = document.createTextNode(name);
 
-      var nuevopricet = document.createTextNode(price);
-      var brt = document.createElement('br');
-      var brp = document.createElement('br');
-      nuevoname.appendChild(nuevonamet);
-      nuevoprice.appendChild(nuevopricet);
-      nuevoname.appendChild(brt);
-      nuevoprice.appendChild(brp);
-    }
-    /*
-    
-     for (var m = 0; m < objectsToTest.length; m++){
-    if(objectsToTest[m].uuid==modelos[modeloselecto].uuid){
-     objectsToTest.splice(m,1)
-    }
-    
-    document.getElementById("dd").style.left = mouseX+'px';
-    document.getElementById("dd").style.top = mouseY+'px';
+      var nuevoprice = document.createElement("P");
 
-    var menu = document.createElement('div');
-    menu.className = 'radial menu';
-    menu.title = "Click To Open";
-    var inp = document.createElement("INPUT");
-    inp.id = 'radialMenu';
-    inp.setAttribute("type", "checkbox");
-    menu.appendChild(inp);
-    var lab = document.createElement("LABEL");
-    lab.className = 'radialPivot';
-    lab.htmlFor = 'radialMenu';
-    menu.appendChild(lab);
-    var span1 = document.createElement("SPAN");
-    span1.className = 'far fa-compass';
-    var span1icon = document.createTextNode("A");
-    span1.appendChild(span1icon);
-    lab.appendChild(span1);
-    var span2 = document.createElement("SPAN");
-    span2.className = 'sronly';
-    var span2t = document.createTextNode("Show menu items");
-    span2.appendChild(span2t);
-    lab.appendChild(span2);
-    var ul = document.createElement("UL");
-    ul.className = 'radialList compass';
-    ul.setAttribute("role", "navigation");
-    ul.ariaLabel = "menu items"
-    menu.appendChild(ul);
-  
-    var i1 = document.createElement("LI");
-    var t1 = document.createTextNode("item 1");
-    i1.appendChild(t1);
-    var i2 = document.createElement("LI");
-    var t2 = document.createTextNode("item 2");
-    i2.appendChild(t2);
-    var i3 = document.createElement("LI");
-    var t3 = document.createTextNode("item 3");
-    i3.appendChild(t3);
-    ul.appendChild(i1);
-    ul.appendChild(i2);
-    ul.appendChild(i3);
-  
-    document.getElementById("dd").appendChild(menu); */
+      var nuevopricet = document.createTextNode(price);
+
+     // var brt = document.createElement('br');
+     // var brp = document.createElement('br');
+      nuevoname.appendChild(nuevonamet);
+      names.appendChild(nuevoname);
+      nuevoprice.appendChild(nuevopricet);
+      prices.appendChild(nuevoprice);
+      //names.appendChild(brt);
+     // nuevoprice.appendChild(brp);
+      if (modeloselecto == i){
+        nuevoname.style.textDecoration = "underline";
+      }
+      else if (modeloselecto ==null){
+        names.style.textDecoration = "";
+      }
+    }
+    document.getElementById("total").innerHTML = "<strong>&nbsp;Total: &nbsp;&nbsp;&nbsp;&nbsp;</strong>"+ total;
+
   }
   else {
+     document.getElementById("items").innerHTML = "";
   }
 }
 
