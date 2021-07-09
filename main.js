@@ -405,10 +405,7 @@ for (var c of catalogo){
       
       modelos[i].add(gltf.scene)
       scene.add(modelos[i]);
-      if (d1 !== null){
-        d1.remove();
-        compileList()
-      }
+
       
       objectsToTest.push(modelos[i]);
       modelos [i].userData.push (name)
@@ -417,10 +414,14 @@ for (var c of catalogo){
       for (let object of INITIAL_MAP) {
         initColor(gltf.scene, object.childID, object.mtl);
       }
+
     }, undefined, function (error) {
       console.error(error);
     });
-    
+    if (d1 !== null){
+      d1.remove();
+      compileList()
+    }
   }
   
 }
