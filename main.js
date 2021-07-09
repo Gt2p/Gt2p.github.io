@@ -389,7 +389,7 @@ for (var c of catalogo){
       document.getElementsByTagName('body')[0].appendChild(d1);
       d1.appendChild(d2);
       c.loaded = true;
-      compiledelay = 1000
+      compiledelay = 1400
     }
     
     loader.load(c.path, function (gltf) {  
@@ -410,12 +410,13 @@ for (var c of catalogo){
       objectsToTest.push(modelos[i]);
       modelos [i].userData.push (name)
       modelos [i].userData.push (price)
-      if (d1 !== null){
-        d1.remove();
-      }
+
       // Set initial textures
       for (let object of INITIAL_MAP) {
         initColor(gltf.scene, object.childID, object.mtl);
+      }
+      if (d1 !== null){
+        d1.remove();
       }
     }, undefined, function (error) {
       console.error(error);
