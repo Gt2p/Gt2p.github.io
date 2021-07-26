@@ -65,7 +65,7 @@ body {
 
 #list {
   position: absolute;
-  right: 6%;
+  right: 3%;
   top: 6%;
   display: flex;
   flex-direction: column;
@@ -81,6 +81,21 @@ body {
   right: 0%;
   top: 0px;
   display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.imgs {
+  position: relative;
+  right: 0px;
+  top: 0px;
+  padding: -20 ;
+  margin:0;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;

@@ -65,20 +65,20 @@ const colorstapiz = [
      
 //Modelos
 const modelos = []
-var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false};
-var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false};
-var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false};
-var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false};
-var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false};
-var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false};
-var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false};
-var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false};
-var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false};
-var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false};
-var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false};
-var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false};
-var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false};
-var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false};
+var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false,img:"./botones/pt1ci01.png"};
+var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false,img:"./botones/pt1ci02.png"};
+var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false,img:"./botones/pt2ci01.png"};
+var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false,img:"./botones/pt3ci01.png"};
+var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false,img:"./botones/pt3ci02.png"};
+var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false,img:"./botones/pt4ci01.png"};
+var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false,img:"./botones/pt4ci02.png"};
+var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false,img:"./botones/ptcd101.png"};
+var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false,img:"./botones/ptcd201.png"};
+var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false,img:"./botones/ptcd301.png"};
+var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false,img:"./botones/ptct101.png"};
+var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false,img:"./botones/ptct201.png"};
+var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false,img:"./botones/ptct301.png"};
+var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false,img:"./botones/esquina.png"};
 
 const catalogo = [pt1ci01,pt1ci02,pt2ci01,pt3ci01,pt3ci02,pt4ci01,pt4ci02,ptcd101,ptcd201,ptcd301,ptct101,ptct201,ptct301,esquina]
 
@@ -235,17 +235,23 @@ function moveractivado(){
     if(cantake == true){
         cantake = false
         modeloselecto = null
+        comparar = true
+        seleccion = 0
         centercamera()
         compileList()
+        document.body.style.cursor="default"
     }
     else{
         cantake= true
         compileList()
+        document.body.style.cursor="grabbing"
     }
   }
   else{
     cantake = true
     compileList()
+    
+    
    // console.log(modelos[modeloselecto])
   }
   
@@ -272,8 +278,10 @@ function flip(){
     // your code here.
   }
   else {
+  console.log( modelos[modeloselecto].matrix)   
     modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(-1, 1, 1));
-  //  console.log( modelos[modeloselecto].userData)
+    modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
+  console.log( modelos[modeloselecto].matrix)
   }
 }
 let activarsnap = true;
@@ -300,6 +308,8 @@ function remove(){
    modelos.splice(modeloselecto,1)
     cantake = false
     modeloselecto = null
+    comparar = true
+    seleccion = 0
     setTimeout(function() {
       compileList()
     }, 30);
@@ -350,6 +360,7 @@ for (var c of catalogo){
     let z = c.z
     let name = c.name
     let price = c.price
+    let img = c.img
     const geometry = new THREE.BoxBufferGeometry( c.x, c.y, c.z, 1)
     const materials = new THREE.MeshBasicMaterial( {color: 0xffff00} )
     materials.transparent= true
@@ -389,7 +400,7 @@ for (var c of catalogo){
       document.getElementsByTagName('body')[0].appendChild(d1);
       d1.appendChild(d2);
       c.loaded = true;
-      compiledelay = 1400
+      compiledelay = 1000
     }
     
     loader.load(c.path, function (gltf) {  
@@ -405,18 +416,18 @@ for (var c of catalogo){
       
       modelos[i].add(gltf.scene)
       scene.add(modelos[i]);
-
+      if (d1 !== null){
+        d1.remove();
+        
+      }
       
       objectsToTest.push(modelos[i]);
       modelos [i].userData.push (name)
       modelos [i].userData.push (price)
-
+      modelos [i].userData.push (img)
       // Set initial textures
       for (let object of INITIAL_MAP) {
         initColor(gltf.scene, object.childID, object.mtl);
-      }
-      if (d1 !== null){
-        d1.remove();
       }
     }, undefined, function (error) {
       console.error(error);
@@ -429,7 +440,9 @@ console.log(modelos)
 setTimeout(function() {
   compileList()
 }, compiledelay);
-
+setTimeout(function() {
+  compileList()
+}, compiledelay);
 }
     // Function - Add the textures to the models
     function initColor(parent, type, mtl) {
@@ -487,9 +500,11 @@ function testCollision(otro) {
   let otroC = new THREE.Vector3( );
   let otroD = new THREE.Vector3( );
 
-  let umbralsnap = 0.8;
-  let umbralmouse = 1.0;
-
+  let umbralsnap = 0.15;
+  let umbralmouse = 0.11
+  let offsettoma = 0.05
+  let comparar = true
+  let seleccion = 0
   function Snaps(otro) {
     let selx= modelos[modeloselecto].userData[0]/2
     let selz = modelos[modeloselecto].userData[1]/2
@@ -507,7 +522,7 @@ function testCollision(otro) {
     otroC.set(otro.position.x+otrox, -1,otro.position.z+otroz );
     otroD.set(otro.position.x+otrox, -1,otro.position.z-otroz );
     
-    let AD = selA.distanceToSquared ( otroD );
+    let AD = selA.distanceToSquared (otroD );
     let AB = selA.distanceToSquared(otroB)
     let AC = selA.distanceToSquared(otroC)
 
@@ -528,63 +543,167 @@ function testCollision(otro) {
     let MC = xz.distanceToSquared(otroC)
     let MD = xz.distanceToSquared(otroD)
 
-      if (MA<umbralmouse) {
-       if(CA<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );
+    let MSA = xz.distanceToSquared(selA)
+    let MSB = xz.distanceToSquared(selB)
+    let MSC = xz.distanceToSquared(selC)
+    let MSD = xz.distanceToSquared(selD)
+    
+    if (comparar==true){
+      if(MSA<MSB&&MSA<MSC&&MSA<MSD){
+        
+        seleccion = 1 
+        comparar=false
+        console.log(seleccion)
+      }
+      else if(MSB<MSA&&MSB<MSC&&MSB<MSD){
+        seleccion = 2
+        comparar=false
+        console.log(seleccion)
+       }
+      else if(MSC<MSB&&MSC<MSA&&MSC<MSD){
+        seleccion = 3
+        comparar=false
+        console.log(seleccion)
+       }
+      else if(MSD<MSB&&MSD<MSC&&MSD<MSA){
+         seleccion = 4
+         comparar=false
+         console.log(seleccion)
+        }
+    }
+        if (snaped == false){
+
+            if(seleccion==1){
+            if (MB<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z+otroz+selz );
+              snaped = true
+            }
+            else if (MC<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz+selz );
+              snaped = true  
+            }
+            else if (MD<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz+selz);
+              snaped = true
+            }
+            
+          else{
+          modelos[modeloselecto].position.set(redcircle.position.x+selx-offsettoma, redcircle.position.y,redcircle.position.z+selz-offsettoma);
+       
+          }
+          }
+           if(seleccion==2){
+            if (MA<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );
+              snaped = true          
+            }
+            else if (MD<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );
+              snaped = true           
+            }
+            else if (MC<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz-selz);
+              snaped = true
+             
+            }
+
+          else{
+           modelos[modeloselecto].position.set(redcircle.position.x+selx-offsettoma, redcircle.position.y,redcircle.position.z-selz+offsettoma);
+          
+          }
+          }  
+           if(seleccion==3){
+            if (MA<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );
+              snaped = true
+              
+            }
+            else if (MB<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz-selz );
+              snaped = true
+              ;
+            }
+            else if (MD<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z-otroz-selz);
+              snaped = true
+              
+            }
+
+            else{
+            modelos[modeloselecto].position.set(redcircle.position.x-selx+offsettoma, redcircle.position.y,redcircle.position.z-selz+offsettoma);
+            
+          }
+          }
+
+           if(seleccion==4){
+
+            if (MA<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz+selz );
+              snaped = true
+              
+            }
+            else if (MB<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz+selz );
+              snaped = true
+              
+            }
+            else if (MC<umbralmouse) {
+              modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z+otroz+selz);
+              snaped = true
+             
+            }
+            else{
+            modelos[modeloselecto].position.set(redcircle.position.x-selx+offsettoma, redcircle.position.y,redcircle.position.z+selz-offsettoma);
+          }
+          }  
+
+
+/*        if(CA<umbralsnap){
+        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
        }
        else if(BA<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );
+        modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
        }
        else if(DA<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz+selz);
+        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz+selz);snaped = true
        }
-      snaped = true
-      modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
-      }
-      else if (MB<umbralmouse){
-       if(CB<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz-selz );
+      
+       else if(CB<umbralsnap){
+        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz-selz );snaped = true
        }
        else if(DB<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz+selz );
+        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz+selz );snaped = true
        }
        else if(AB<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z+otroz+selz);
+        modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z+otroz+selz);snaped = true
        }
-      snaped = true
-      modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
-      }
 
-       else if (MC<umbralmouse){
-        if(BC<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz-selz );
+       else if(BC<umbralsnap){
+         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz-selz );snaped = true
         }
         else if(AC<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz+selz );
+         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz+selz );snaped = true
         }
         else if(DC<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z+otroz+selz);
+         modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z+otroz+selz);snaped = true
         }
-       snaped = true
-       modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
-       }
-      else if (MD<umbralmouse){
-        if(CD<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );
+
+      else if(CD<umbralsnap){
+         modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
         }
         else if(BD<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );
+         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
         }
         else if(AD<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz+selz);
+         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz+selz);snaped = true
         }
-       snaped = true
-       modelos[modeloselecto].applyMatrix4(new THREE.Matrix4().makeScale(1, 1, 1));
-       }
+        
       else {
         if (snaped == false){
           modelos[modeloselecto].position.copy(redcircle.position)
         }
+       } */
+
        }
     }
 
@@ -721,21 +840,25 @@ function toque(){
                    case floor:
      
                    console.log('clickfloor')
+                   if(modeloselecto != null){
+                    moveractivado()
+                   }
                    //console.log(xz)   
                    break
             
                    case modelos[p]:
                    
                   // console.log('toque a '+ p)
-                    
-                    
+
                     if(modeloselecto==null){
                     modeloselecto = p 
                    // menu()
                     moveractivado()
                     }
                     else{
+                    
                     moveractivado()
+                    
                     }
                   //console.log(modelos[modeloselecto].position.x)     
                    //console.log(modelos[modeloselecto].userData)
@@ -752,7 +875,48 @@ function toque(){
          }
        }
       }
+      window.addEventListener('mousemove', sobre)
+      function sobre(){
+        if(activarControles==true){
 
+            for (var p = 0; p <= modelos.length; p++){
+            
+             if(currentIntersect.object){
+                 switch(currentIntersect.object){
+           
+                         case floor:
+           
+                         if(modeloselecto == null){
+                            document.body.style.cursor="default"
+                         }
+                         //console.log(xz)   
+                         break
+                  
+                         case modelos[p]:
+                         
+                      
+      
+                          if(modeloselecto==null){
+                            document.body.style.cursor="grab"
+                          }
+                          else{
+                            document.body.style.cursor="grabbing"
+                          }
+                        //console.log(modelos[modeloselecto].position.x)     
+                         //console.log(modelos[modeloselecto].userData)
+                       
+                         break 
+      
+           
+                         default:
+                       //  console.log('ah??')
+           
+                         }
+                 }
+                
+               }
+             }
+            }
 document.getElementById("shot").addEventListener('click', takeScreenshot);
 function takeScreenshot() {
   // open in new window like this
@@ -915,8 +1079,11 @@ function compileList(){
     document.getElementById("items").innerHTML = "";
     var names = document.createElement("LI");
     names.className = 'nombres';
+    var imgs = document.createElement("LI");
+    imgs.className = 'imgs';
     var prices = document.createElement("LI");
     prices.className = 'precios';
+    document.getElementById("items").appendChild(imgs);
     document.getElementById("items").appendChild(names);
     document.getElementById("items").appendChild(prices);
     for (var i = 0; i < modelos.length; i++){
@@ -924,18 +1091,32 @@ function compileList(){
       let name = modelos[i].userData[2]
     
       let price = modelos[i].userData[3]
-      
+      let img = modelos[i].userData[4]
       total += price
+
+      var precio = price.toLocaleString("es-CL")
+
       var nuevoname = document.createElement("P");
 
       var nuevonamet = document.createTextNode(name);
 
+      var nuevoimg = document.createElement("P");
+      var nuevoimgt = document.createElement("IMG");
+      nuevoimgt.setAttribute("src", img);
+      nuevoimgt.setAttribute("height", "49");
+      nuevoimgt.setAttribute("border", "10");
+      nuevoimgt.style.borderStyle = "hidden";
+      
+     
       var nuevoprice = document.createElement("P");
 
-      var nuevopricet = document.createTextNode(price);
+      var nuevopricet = document.createTextNode(precio);
 
      // var brt = document.createElement('br');
-     // var brp = document.createElement('br');
+     // var brp = document.createElement('br')
+     // nuevoimg.appendChild(nuevoimgt);;
+      imgs.appendChild(nuevoimgt);
+
       nuevoname.appendChild(nuevonamet);
       names.appendChild(nuevoname);
       nuevoprice.appendChild(nuevopricet);
@@ -949,7 +1130,7 @@ function compileList(){
         names.style.textDecoration = "";
       }
     }
-    document.getElementById("total").innerHTML = "<strong>&nbsp;Total: &nbsp;&nbsp;&nbsp;&nbsp;</strong>"+ total;
+    document.getElementById("total").innerHTML = "<strong>&nbsp;Total: &nbsp;&nbsp;&nbsp;&nbsp;</strong>"+ total.toLocaleString("es-CL");
 
   }
   else {
