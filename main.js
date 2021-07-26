@@ -65,20 +65,20 @@ const colorstapiz = [
      
 //Modelos
 const modelos = []
-var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false,img:"./botones/pt1ci01.png"};
-var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false,img:"./botones/pt1ci02.png"};
-var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false,img:"./botones/pt2ci01.png"};
-var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false,img:"./botones/pt3ci01.png"};
-var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false,img:"./botones/pt3ci02.png"};
-var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false,img:"./botones/pt4ci01.png"};
-var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false,img:"./botones/pt4ci02.png"};
-var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false,img:"./botones/ptcd101.png"};
-var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false,img:"./botones/ptcd201.png"};
-var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false,img:"./botones/ptcd301.png"};
-var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false,img:"./botones/ptct101.png"};
-var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false,img:"./botones/ptct201.png"};
-var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false,img:"./botones/ptct301.png"};
-var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false,img:"./botones/esquina.png"};
+var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false,img:"./Botones/pt1ci01.png"};
+var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false,img:"./Botones/pt1ci02.png"};
+var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false,img:"./Botones/pt2ci01.png"};
+var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false,img:"./Botones/pt3ci01.png"};
+var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false,img:"./Botones/pt3ci02.png"};
+var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false,img:"./Botones/pt4ci01.png"};
+var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false,img:"./Botones/pt4ci02.png"};
+var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false,img:"./Botones/ptcd101.png"};
+var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false,img:"./Botones/ptcd201.png"};
+var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false,img:"./Botones/ptcd301.png"};
+var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false,img:"./Botones/ptct101.png"};
+var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false,img:"./Botones/ptct201.png"};
+var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false,img:"./Botones/ptct301.png"};
+var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false,img:"./Botones/esquina.png"};
 
 const catalogo = [pt1ci01,pt1ci02,pt2ci01,pt3ci01,pt3ci02,pt4ci01,pt4ci02,ptcd101,ptcd201,ptcd301,ptct101,ptct201,ptct301,esquina]
 
