@@ -10,50 +10,50 @@ const colorstapiz = [
   {
       texture: './texturas/azul.jpg',
       size: [8, 8, 8],
-      shininess: 25
+      shininess: 12
   },{
       texture: './texturas/azulmarino.jpg',
       size: [8, 8, 8],
-      shininess: 42
+      shininess: 6
   },{
      texture: './texturas/gris.jpg',
      size: [8, 8, 8],
-     shininess: 27
+     shininess: 12
   },{
      texture: './texturas/grisoscuro.jpg',
       size: [8, 8, 8],
-     shininess: 27
+     shininess: 12
   },{
         texture: './texturas/verde.jpg',
-       size: [7, 7, 7],
-      shininess: 33
+       size: [8, 8, 8],
+      shininess: 12
   },{
     texture: './texturas/claro.jpg',
     size: [8, 8, 8],
-    shininess: 27
+    shininess: 16
   }
  ]
   const colorssoporte = [
     {
         texture: './texturas/madera.jpg',
         size: [2,2,2],
-        shininess: 60
+        shininess: 50
     },{
         texture: './texturas/maderaazul.jpg',
         size: [3,3,3],
-        shininess: 60
+        shininess: 50
     },{
        texture: './texturas/maderaamarillo.jpg',
        size: [2,2,2],
-       shininess: 60
+       shininess: 50
     },{
        texture: './texturas/maderagris.jpg',
        size: [2,2,2],
-       shininess: 60
+       shininess: 50
     },{
         texture: './texturas/walnut.jpg',
         size: [6,6,6],
-        shininess: 60
+        shininess: 30
     },{
         texture: './texturas/lightbirch.jpg',
        size: [6,6,6],
@@ -65,20 +65,20 @@ const colorstapiz = [
      
 //Modelos
 const modelos = []
-var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false,img:"./Botones/pt1ci01.png"};
-var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false,img:"./Botones/pt1ci02.png"};
-var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false,img:"./Botones/pt2ci01.png"};
-var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false,img:"./Botones/pt3ci01.png"};
-var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false,img:"./Botones/pt3ci02.png"};
-var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false,img:"./Botones/pt4ci01.png"};
-var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false,img:"./Botones/pt4ci02.png"};
-var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false,img:"./Botones/ptcd101.png"};
-var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false,img:"./Botones/ptcd201.png"};
-var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false,img:"./Botones/ptcd301.png"};
-var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false,img:"./Botones/ptct101.png"};
-var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false,img:"./Botones/ptct201.png"};
-var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false,img:"./Botones/ptct301.png"};
-var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false,img:"./Botones/esquina.png"};
+var pt1ci01 ={name:"pt1ci01",path:"./modelos/pt1ci01.glb",x:0.908,y: 0.76,z: 1.012,price:3500,loaded: false,img:"./botones/pt1ci01.png"};
+var pt1ci02 ={name:"pt1ci02",path:"./modelos/pt1ci02.glb",x:0.91,y: 0.76,z: 1.02,price:3600,loaded: false,img:"./botones/pt1ci02.png"};
+var pt2ci01 ={name:"pt2ci01",path:"./modelos/pt2ci01.glb",x:0.908,y: 0.76,z: 1.7512,price:3700,loaded: false,img:"./botones/pt2ci01.png"};
+var pt3ci01 ={name:"pt3ci01",path:"./modelos/pt3ci01.glb",x:1.252,y: 0.76,z: 1.012,price:3800,loaded: false,img:"./botones/pt3ci01.png"};
+var pt3ci02 ={name:"pt3ci02",path:"./modelos/pt3ci02.glb",x:1.252,y: 0.76,z: 1.012,price:3804,loaded: false,img:"./botones/pt3ci02.png"};
+var pt4ci01 ={name:"pt4ci01",path:"./modelos/pt4ci01.glb",x:1.252,y: 0.76,z: 1.7512,price:3900,loaded: false,img:"./botones/pt4ci01.png"};
+var pt4ci02 ={name:"pt4ci02",path:"./modelos/pt4ci02.glb",x:1.252,y: 0.76,z: 1.7512,price:4000,loaded: false,img:"./botones/pt4ci02.png"};
+var ptcd101 ={name:"ptcd101",path:"./modelos/ptcd101.glb",x:1.802,y: 0.76,z: 1.012,price:4100,loaded: false,img:"./botones/ptcd101.png"};
+var ptcd201 ={name:"ptcd201",path:"./modelos/ptcd201.glb",x:2.152,y: 0.76,z: 1.012,price:4200,loaded: false,img:"./botones/ptcd201.png"};
+var ptcd301 ={name:"ptcd301",path:"./modelos/ptcd301.glb",x:2.51,y: 0.76,z: 1.012,price:4300,loaded: false,img:"./botones/ptcd301.png"};
+var ptct101 ={name:"ptct101",path:"./modelos/ptct101.glb",x:2.702,y: 0.76,z: 1.012,price:4400,loaded: false,img:"./botones/ptct101.png"};
+var ptct201 ={name:"ptct201",path:"./modelos/ptct201.glb",x:3.051,y: 0.76,z: 1.012,price:4500,loaded: false,img:"./botones/ptct201.png"};
+var ptct301 ={name:"ptct301",path:"./modelos/ptct301.glb",x:3.402,y: 0.76,z: 1.012,price:4600,loaded: false,img:"./botones/ptct301.png"};
+var esquina ={name:"esquina",path:"./modelos/esquina.glb",x:1.012,y: 0.76,z: 1.012,price:3300,loaded: false,img:"./botones/esquina.png"};
 
 const catalogo = [pt1ci01,pt1ci02,pt2ci01,pt3ci01,pt3ci02,pt4ci01,pt4ci02,ptcd101,ptcd201,ptcd301,ptct101,ptct201,ptct301,esquina]
 
@@ -206,8 +206,8 @@ const redcircle = new THREE.Mesh(
 
 redcircle.rotation.x = - Math.PI * 0.5
 redcircle.position.y = floor.position.y + 0.03
-redcircle.material.opacity = 0.1
-scene.add(redcircle)
+redcircle.material.opacity = 0.75
+//scene.add(redcircle)
 
     // Init the object loader
     var loader = new GLTFLoader();
@@ -216,7 +216,7 @@ scene.add(redcircle)
 let addedvectors = new THREE.Vector3( );
 addedvectors.set(0,0,0)
 function centercamera(){
- if (modelos.length<1){
+ if (modelos.length<=1){
 
  } 
  else{
@@ -237,6 +237,7 @@ function moveractivado(){
         modeloselecto = null
         comparar = true
         seleccion = 0
+        marcamaterial.opacity= 0.00
         centercamera()
         compileList()
         document.body.style.cursor="default"
@@ -310,6 +311,7 @@ function remove(){
     modeloselecto = null
     comparar = true
     seleccion = 0
+    marcamaterial.opacity= 0.00
     setTimeout(function() {
       compileList()
     }, 30);
@@ -376,7 +378,7 @@ for (var c of catalogo){
     modelos [i] = new THREE.Mesh( geometry, materials)
     if (modelos.length<=1){
       modelos [i].position.set(0,redcircle.position.y,0);
-      centercamera()
+      //centercamera()
     } 
     else{
       for (var modelo of modelos){
@@ -505,6 +507,13 @@ function testCollision(otro) {
   let offsettoma = 0.05
   let comparar = true
   let seleccion = 0
+
+  const marcageo = new THREE.CylinderGeometry( 0.20,0.20, 0.1, 32 );
+  const marcamaterial = new THREE.MeshBasicMaterial( {color: 0xffa64d} );
+  marcamaterial.transparent= true
+  marcamaterial.opacity= 0.00
+  const marcasnap = new THREE.Mesh( marcageo, marcamaterial );
+  scene.add( marcasnap );
   function Snaps(otro) {
     let selx= modelos[modeloselecto].userData[0]/2
     let selz = modelos[modeloselecto].userData[1]/2
@@ -574,6 +583,8 @@ function testCollision(otro) {
         if (snaped == false){
 
             if(seleccion==1){
+              marcasnap.position.set(modelos[modeloselecto].position.x-selx, -1, modelos[modeloselecto].position.z-selz)
+              marcamaterial.opacity= 0.50
             if (MB<umbralmouse) {
               modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z+otroz+selz );
               snaped = true
@@ -593,6 +604,8 @@ function testCollision(otro) {
           }
           }
            if(seleccion==2){
+            marcasnap.position.set(modelos[modeloselecto].position.x-selx, -1, modelos[modeloselecto].position.z+selz)
+            marcamaterial.opacity= 0.50
             if (MA<umbralmouse) {
               modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );
               snaped = true          
@@ -613,6 +626,8 @@ function testCollision(otro) {
           }
           }  
            if(seleccion==3){
+            marcasnap.position.set(modelos[modeloselecto].position.x+selx, -1, modelos[modeloselecto].position.z+selz)
+            marcamaterial.opacity= 0.50
             if (MA<umbralmouse) {
               modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );
               snaped = true
@@ -636,8 +651,10 @@ function testCollision(otro) {
           }
 
            if(seleccion==4){
-
+            marcasnap.position.set(modelos[modeloselecto].position.x+selx, -1, modelos[modeloselecto].position.z-selz)
+            marcamaterial.opacity= 0.50
             if (MA<umbralmouse) {
+             
               modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz+selz );
               snaped = true
               
