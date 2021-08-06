@@ -233,6 +233,7 @@ let modeloselecto = null
 function moveractivado(){
   if (choque==false){
     if(cantake == true){
+        
         cantake = false
         modeloselecto = null
         comparar = true
@@ -471,8 +472,14 @@ function cambiarmaterial(){
 
 var choque = false;
 
+const colgeo = new THREE.BoxGeometry( 1, 0.8, 1 );
+const colmaterial = new THREE.MeshBasicMaterial( {color: 0xffe6cc} );
+colmaterial.transparent= true
+colmaterial.opacity= 0.00
+const colobj = new THREE.Mesh( colgeo, colmaterial );
+scene.add( colobj );
 function testCollision(otro) {
-  var offset = 0.1
+  var offset = 0.02
   var selbot = (modelos[modeloselecto].position.z-modelos[modeloselecto].userData[1]/2)
   var seltop = (modelos[modeloselecto].position.z+modelos[modeloselecto].userData[1]/2)
   var selright = (modelos[modeloselecto].position.x+modelos[modeloselecto].userData[0]/2)
@@ -484,11 +491,15 @@ function testCollision(otro) {
   var otroleft = (otro.position.x-otro.userData[0]/2)
 
     if (seltop < otrobot+offset || selright < otroleft+offset || selbot > otrotop-offset || selleft > otroright-offset) {
+    // marcamaterial.opacity= 0.00
      return false;
     }
      else {
-     return true;
-     
+     colobj.position.set(modelos[modeloselecto].position.x, modelos[modeloselecto].position.y, modelos[modeloselecto].position.z)
+     colobj.scale.x = modelos[modeloselecto].userData[0]
+     colobj.scale.z = modelos[modeloselecto].userData[1]
+     colmaterial.opacity= 0.08
+     return true
      }
   }
 
@@ -894,6 +905,9 @@ function toque(){
       }
       window.addEventListener('mousemove', sobre)
       function sobre(){
+        if (choque == false){
+          colmaterial.opacity= 0.00 
+        }
         if(activarControles==true){
 
             for (var p = 0; p <= modelos.length; p++){
@@ -1192,6 +1206,7 @@ const tick = () =>
         check.push(choca)
        }
       choque = check.some(checkBool)
+
       //console.log(choque)
       snaped = false
 
@@ -1209,6 +1224,7 @@ const tick = () =>
           }
           else{
             modelos[modeloselecto].position.copy(redcircle.position)
+            
           } 
         }
         }
