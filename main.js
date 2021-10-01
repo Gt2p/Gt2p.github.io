@@ -3,7 +3,7 @@ import * as THREE from './three.js-master/build/three.module.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 
-let c1 = document.document.getElementById('c1');
+let c1 = document.getElementById('c1') ;
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
