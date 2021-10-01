@@ -4,12 +4,14 @@ import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitContro
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 
 let c1 = document.getElementById('c1') ;
- 
+let buildcolorsready = false;
+let buildcolortready = false;
+
 document.addEventListener("DOMContentLoaded", function(event) { 
 
-  if (c1 !== null){
+  if (c1 !== null &&buildcolorsready == true &&buildcolortready == true){
     c1.remove();
-  }
+  } 
 // texturas load
 const textureLoader = new THREE.TextureLoader()
 const simpleShadow = textureLoader.load('./texturas/simpleShadow.jpg')
@@ -686,6 +688,7 @@ function buildColorstapiz(colors) {
      swatch.setAttribute('data-key', i);
      bandejatapiz.append(swatch);
    }
+   buildcolortready = true;
  }  
 buildColorstapiz(colorstapiz);
 
@@ -740,6 +743,7 @@ function buildColorssoporte(colors) {
      swatch.setAttribute('data-key', i);
      bandejasoporte.append(swatch);
    }
+   buildcolorsready = true;
  }  
 buildColorssoporte(colorssoporte);
 
