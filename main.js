@@ -4,7 +4,7 @@ import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitContro
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 
 let c1 = document.getElementById('c1') ;
-
+ 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
   if (c1 !== null){
