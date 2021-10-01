@@ -42,9 +42,22 @@ body {
   top: 500px;
 }
 #shot {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.95;
+  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
   position: absolute;
-  top: 0px;
-  right: 0px;
+  bottom: 30px;
+  right: 3%;
   margin: 5px;
 }
 .info {

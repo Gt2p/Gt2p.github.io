@@ -1,7 +1,9 @@
+
 import * as THREE from './three.js-master/build/three.module.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
-
+ 
+document.addEventListener("DOMContentLoaded", function(event) { 
 
 // texturas load
 const textureLoader = new THREE.TextureLoader()
@@ -10,7 +12,7 @@ const colorstapiz = [
   {
       texture: './texturas/azul.jpg',
       size: [8, 8, 8],
-      shininess: 12
+      shininess: 0
   },{
       texture: './texturas/azulmarino.jpg',
       size: [8, 8, 8],
@@ -178,10 +180,7 @@ inittxt_soporte.wrapT = THREE.RepeatWrapping;
 
 var INITIAL_MTL_soporte = new THREE.MeshPhongMaterial({ map: inittxt_soporte, shininess: 60 });
 var INITIAL_MTL_tapiz = new THREE.MeshPhongMaterial( {map: inittxt_tapiz, shininess: 25})
-   
-
-
- // new_mtl = new THREE.MeshPhongMaterial( {map: inittxt, shininess: 25})
+ 
 // Raycaster
 
 const mouse = new THREE.Vector2()
@@ -207,12 +206,10 @@ const redcircle = new THREE.Mesh(
 redcircle.rotation.x = - Math.PI * 0.5
 redcircle.position.y = floor.position.y + 0.03
 redcircle.material.opacity = 0.75
-//scene.add(redcircle)
-
+ 
     // Init the object loader
     var loader = new GLTFLoader();
-
-
+ 
 let addedvectors = new THREE.Vector3( );
 addedvectors.set(0,0,0)
 function centercamera(){
@@ -252,9 +249,7 @@ function moveractivado(){
   else{
     cantake = true
     compileList()
-    
-    
-   // console.log(modelos[modeloselecto])
+ 
   }
   
 }
@@ -313,6 +308,7 @@ function remove(){
     comparar = true
     seleccion = 0
     marcamaterial.opacity= 0.00
+    colmaterial.opacity= 0.00
     setTimeout(function() {
       compileList()
     }, 30);
@@ -341,7 +337,6 @@ document.addEventListener('keydown', function (event) {
  if (event.key === 'd') {
   compileList();
 }   
-
 }); 
 
 window.addEventListener('click', toque)
@@ -541,23 +536,7 @@ function testCollision(otro) {
     otroB.set(otro.position.x-otrox, -1,otro.position.z+otroz );
     otroC.set(otro.position.x+otrox, -1,otro.position.z+otroz );
     otroD.set(otro.position.x+otrox, -1,otro.position.z-otroz );
-    
-    let AD = selA.distanceToSquared (otroD );
-    let AB = selA.distanceToSquared(otroB)
-    let AC = selA.distanceToSquared(otroC)
-
-    let BC = selB.distanceToSquared(otroC)
-    let BA = selB.distanceToSquared(otroA)
-    let BD = selB.distanceToSquared(otroD)
-
-    let CD = selC.distanceToSquared(otroD)
-    let CB = selC.distanceToSquared(otroB)
-    let CA = selC.distanceToSquared(otroA)
-
-    let DB = selD.distanceToSquared(otroB)
-    let DA = selD.distanceToSquared(otroA)
-    let DC = selD.distanceToSquared(otroC)
-
+ 
     let MA = xz.distanceToSquared(otroA)
     let MB = xz.distanceToSquared(otroB)
     let MC = xz.distanceToSquared(otroC)
@@ -658,9 +637,8 @@ function testCollision(otro) {
             else{
             modelos[modeloselecto].position.set(redcircle.position.x-selx+offsettoma, redcircle.position.y,redcircle.position.z-selz+offsettoma);
             
+            }
           }
-          }
-
            if(seleccion==4){
             marcasnap.position.set(modelos[modeloselecto].position.x+selx, -1, modelos[modeloselecto].position.z-selz)
             marcamaterial.opacity= 0.50
@@ -684,54 +662,6 @@ function testCollision(otro) {
             modelos[modeloselecto].position.set(redcircle.position.x-selx+offsettoma, redcircle.position.y,redcircle.position.z+selz-offsettoma);
           }
           }  
-
-
-/*        if(CA<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
-       }
-       else if(BA<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
-       }
-       else if(DA<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z-otroz+selz);snaped = true
-       }
-      
-       else if(CB<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz-selz );snaped = true
-       }
-       else if(DB<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox-selx, redcircle.position.y,otro.position.z+otroz+selz );snaped = true
-       }
-       else if(AB<umbralsnap){
-        modelos[modeloselecto].position.set(otro.position.x-otrox+selx, redcircle.position.y,otro.position.z+otroz+selz);snaped = true
-       }
-
-       else if(BC<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz-selz );snaped = true
-        }
-        else if(AC<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z+otroz+selz );snaped = true
-        }
-        else if(DC<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z+otroz+selz);snaped = true
-        }
-
-      else if(CD<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox-selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
-        }
-        else if(BD<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz-selz );snaped = true
-        }
-        else if(AD<umbralsnap){
-         modelos[modeloselecto].position.set(otro.position.x+otrox+selx, redcircle.position.y,otro.position.z-otroz+selz);snaped = true
-        }
-        
-      else {
-        if (snaped == false){
-          modelos[modeloselecto].position.copy(redcircle.position)
-        }
-       } */
-
        }
     }
 
@@ -858,8 +788,7 @@ function setMaterial(parent, type, mtl) {
 
 function toque(){
   if(activarControles==true){
-    // console.log(modelos[modeloselecto])
-    // console.log("cantake es "+cantake)
+
       for (var p = 0; p <= modelos.length; p++){
       
        if(currentIntersect.object){
@@ -876,33 +805,26 @@ function toque(){
             
                    case modelos[p]:
                    
-                  // console.log('toque a '+ p)
 
                     if(modeloselecto==null){
                     modeloselecto = p 
-                   // menu()
+
                     moveractivado()
                     }
-                    else{
-                    
+                    else{         
                     moveractivado()
-                    
                     }
-                  //console.log(modelos[modeloselecto].position.x)     
-                   //console.log(modelos[modeloselecto].userData)
-                 
+ 
                    break 
 
      
                    default:
-                 //  console.log('ah??')
-     
+ 
                    }
            }
-          
          }
+        }
        }
-      }
       window.addEventListener('mousemove', sobre)
       function sobre(){
         if (choque == false){
@@ -920,56 +842,30 @@ function toque(){
                          if(modeloselecto == null){
                             document.body.style.cursor="default"
                          }
-                         //console.log(xz)   
+ 
                          break
                   
                          case modelos[p]:
-                         
-                      
-      
+ 
                           if(modeloselecto==null){
                             document.body.style.cursor="grab"
                           }
                           else{
                             document.body.style.cursor="grabbing"
                           }
-                        //console.log(modelos[modeloselecto].position.x)     
-                         //console.log(modelos[modeloselecto].userData)
-                       
+ 
                          break 
-      
-           
+ 
                          default:
-                       //  console.log('ah??')
-           
+ 
                          }
                  }
-                
                }
              }
             }
 document.getElementById("shot").addEventListener('click', takeScreenshot);
 function takeScreenshot() {
-  // open in new window like this
-  //
-  /*
-    var w = window.open('', '');
-    w.document.title = "Screenshot";
-    //w.document.body.style.backgroundColor = "red";
-    var img = new Image();
-    // Without 'preserveDrawingBuffer' set to true, we must render now
-    renderer.render(scene, camera);
-    img.src = renderer.domElement.toDataURL();
-    w.document.body.appendChild(img);  
-*/
-/*   var w = window.open('', '');
-  w.document.title = "Screenshot";
-  //w.document.body.style.backgroundColor = "red";
-  var img = new Image();
-  renderer.render(scene, camera);
-  img.src = renderer.domElement.toDataURL();
-  w.document.body.appendChild(img);   */
-
+ 
   renderer.preserveDrawingBuffer = true;
   renderer.render(scene, camera)
   html2canvas(document.body).then(function(canvas) {
@@ -985,60 +881,13 @@ function takeScreenshot() {
       a.href = url;
       a.download = 'Captura.png';
       a.click();
-
-    
+ 
     }, 'image/png', 1.0);  
     
    });
    renderer.preserveDrawingBuffer = false; 
-  /*
-      // download file like this.
-      //
-      var a = document.createElement('a');
-      // Without 'preserveDrawingBuffer' set to true, we must render now
-      renderer.render(scene, camera);
-      a.href = renderer.domElement.toDataURL().replace("image/png", "image/octet-stream");
-      a.download = 'canvas.png'
-      a.click();
-  */
-  // New version of file download using toBlob.
-  // toBlob should be faster than toDataUrl.
-  // But maybe not because also calling createOjectURL.
-  //
-/*   renderer.render(scene, camera);
-  renderer.domElement.toBlob(function(blob) {
-    var a = document.createElement('a');
-    var url = URL.createObjectURL(blob);
-    a.href = url;
-    a.download = 'Captura.png';
-    a.click();
-  }, 'image/png', 1.0); */
 }
-/*        
-function setMaterial(parent, type, mtl) {
-    parent.traverse((o) => {
-      if (o.isMesh && o.nameID != null) {
-        if (o.nameID == type) {
-             o.material = mtl;
-         }
-      }
-   });
-  } */
-  /* 
-  <div class="radial menu" title="Click To Open">
-  <input id="radialMenu" type="checkbox">
-  <label class="radialPivot" for="radialMenu">
-    <span class="far fa-compass">A</span>
-    <span class="sronly">Show menu items</span>
-  </label>
-  <ul class="radialList compass" role="navigation" aria-label="menu items">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    ...
-  </ul>
-</div>
-*/
+ 
 let mouseX = 0
 let mouseY = 0
 document.addEventListener('click', onMouseUpdate, false);
@@ -1137,23 +986,18 @@ function compileList(){
       nuevoimgt.setAttribute("height", "49");
       nuevoimgt.setAttribute("border", "10");
       nuevoimgt.style.borderStyle = "hidden";
-      
-     
+ 
       var nuevoprice = document.createElement("P");
 
       var nuevopricet = document.createTextNode(precio);
-
-     // var brt = document.createElement('br');
-     // var brp = document.createElement('br')
-     // nuevoimg.appendChild(nuevoimgt);;
+ 
       imgs.appendChild(nuevoimgt);
 
       nuevoname.appendChild(nuevonamet);
       names.appendChild(nuevoname);
       nuevoprice.appendChild(nuevopricet);
       prices.appendChild(nuevoprice);
-      //names.appendChild(brt);
-     // nuevoprice.appendChild(brp);
+ 
       if (modeloselecto == i){
         nuevoname.style.textDecoration = "underline";
       }
@@ -1207,7 +1051,6 @@ const tick = () =>
        }
       choque = check.some(checkBool)
 
-      //console.log(choque)
       snaped = false
 
       for (var i = modelos.length - 1; i >= 0; i--) {
@@ -1226,13 +1069,12 @@ const tick = () =>
             modelos[modeloselecto].position.copy(redcircle.position)
             
           } 
-        }
+         }
         }
        }
-    }
-    }
+      }
+     }
 
-    
     const elapsedTime = clock.getElapsedTime()
     //Ray y cast
      raycaster.setFromCamera(mouse, camera)
@@ -1264,20 +1106,8 @@ const tick = () =>
         currentIntersect = null
     }
 
-/*     if(cantake == true){
-      if (modeloselecto == null){
-        // your code here.
-      }
-      else {         
-        Snaps()
-        
-      // coso.position.copy(modelos[modeloselecto].position) 
-  
-      }
-    } */
    // Render
     renderer.render(scene, camera)
-
 
     setTimeout( function() {
 
@@ -1285,8 +1115,6 @@ const tick = () =>
 
      }, 1000 / 50 );
 
-    // Call tick again on the next frame
-  //  window.requestAnimationFrame(tick)
     raycaster.updateProjectionMatrix
 
     if (resizeRendererToDisplaySize(renderer)) {
@@ -1315,3 +1143,4 @@ function resizeRendererToDisplaySize(renderer) {
   
 }
 tick()
+});
