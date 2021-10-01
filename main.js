@@ -2,9 +2,18 @@
 import * as THREE from './three.js-master/build/three.module.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
- 
-document.addEventListener("DOMContentLoaded", function(event) { 
 
+let c1 = null
+  c1 = document.createElement('div');
+  c1.className = 'loading';
+  let c2 = document.createElement('div');
+  c2.className = 'loader';
+  document.getElementsByTagName('body')[0].appendChild(c1);
+  c1.appendChild(c2);
+document.addEventListener("DOMContentLoaded", function(event) { 
+  if (c1 !== null){
+    c1.remove();
+  }
 // texturas load
 const textureLoader = new THREE.TextureLoader()
 const simpleShadow = textureLoader.load('./texturas/simpleShadow.jpg')
