@@ -7,6 +7,45 @@ let c1 = document.getElementById('c1') ;
 let buildcolorsready = false;
 let buildcolortready = false;
 
+function buildColorssoporte(colors) {
+  for (let [i, color] of colors.entries()) {
+     let swatch = document.createElement('div');
+    swatch.classList.add('selector_swatchsoporte');
+    if (color.texture)  {
+        swatch.style.backgroundImage = "url(" + color.texture + ")";
+      } else
+      {
+        swatch.style.background = "#" + color.color;
+      }
+     swatch.setAttribute('data-key', i);
+     bandejasoporte.append(swatch);
+   }
+   buildcolorsready = true;
+ }  
+
+ function buildColorstapiz(colors) {
+  for (let [i, color] of colors.entries()) {
+     let swatch = document.createElement('div');
+    swatch.classList.add('selector_swatchtapiz');
+    
+    if (color.texture)  {
+        swatch.style.backgroundImage = "url(" + color.texture + ")";
+      } else
+      {
+        swatch.style.background = "#" + color.color;
+      }
+  
+     swatch.setAttribute('data-key', i);
+     bandejatapiz.append(swatch);
+   }
+   buildcolortready = true;
+ }  
+
+buildColorstapiz(colorstapiz);
+buildColorssoporte(colorssoporte);
+
+
+
 document.addEventListener("DOMContentLoaded", function(event) { 
 
   if (c1 !== null &&buildcolorsready == true &&buildcolortready == true){
@@ -673,24 +712,7 @@ function testCollision(otro) {
     }
 
   // Function - Build Colors
-function buildColorstapiz(colors) {
-  for (let [i, color] of colors.entries()) {
-     let swatch = document.createElement('div');
-    swatch.classList.add('selector_swatchtapiz');
-    
-    if (color.texture)  {
-        swatch.style.backgroundImage = "url(" + color.texture + ")";
-      } else
-      {
-        swatch.style.background = "#" + color.color;
-      }
-  
-     swatch.setAttribute('data-key', i);
-     bandejatapiz.append(swatch);
-   }
-   buildcolortready = true;
- }  
-buildColorstapiz(colorstapiz);
+
 
  const swatchestapiz = document.querySelectorAll(".selector_swatchtapiz");
 
@@ -730,22 +752,7 @@ function selectSwatchtapiz(e) {
  INITIAL_MTL_tapiz=new_mtl;
 }
 //
-function buildColorssoporte(colors) {
-  for (let [i, color] of colors.entries()) {
-     let swatch = document.createElement('div');
-    swatch.classList.add('selector_swatchsoporte');
-    if (color.texture)  {
-        swatch.style.backgroundImage = "url(" + color.texture + ")";
-      } else
-      {
-        swatch.style.background = "#" + color.color;
-      }
-     swatch.setAttribute('data-key', i);
-     bandejasoporte.append(swatch);
-   }
-   buildcolorsready = true;
- }  
-buildColorssoporte(colorssoporte);
+
 
  const swatchessoporte = document.querySelectorAll(".selector_swatchsoporte");
 
