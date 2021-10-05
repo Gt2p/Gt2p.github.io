@@ -58,11 +58,11 @@ const colorstapiz = [
        size: [2,2,2],
        shininess: 50
     },{
-        texture: './texturas/walnut.jpg',
+        texture: './texturas/walnut2.png',
         size: [6,6,6],
         shininess: 30
     },{
-        texture: './texturas/lightbirch.jpg',
+        texture: './texturas/black.png',
        size: [6,6,6],
         shininess: 42
     }  
@@ -323,23 +323,23 @@ function remove(){
 
 //Controles
 document.addEventListener('keydown', function (event) {
-  if (event.key === 'r') {
+  if (event.key === 'r'|| event.key === 'R' ) {
   //  cambiarmaterial();
     rotar();
   }
-  if (event.key === 't') {
+  if (event.key === 't'|| event.key === 'T') {
       flip();
     }
-  if (event.key === 'e') {
+  if (event.key === 'e'|| event.key === 'E') {
      remove();
   }  
-  if (event.key === 'g') {
-    menu();
+  if (event.key === 'g'|| event.key === 'G') {
+  //  menu();
  }  
- if (event.key === 's') {
+ if (event.key === 's'|| event.key === 'S') {
   activarSnap();
 } 
- if (event.key === 'd') {
+ if (event.key === 'd'|| event.key === 'D') {
   compileList();
 }   
 }); 

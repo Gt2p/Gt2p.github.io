@@ -56,8 +56,8 @@ body {
   cursor: pointer;
 
   position: absolute;
-  bottom: 30px;
-  right: 3%;
+  bottom: 45px;
+  right: 5%;
   margin: 5px;
 }
 .info {
@@ -75,7 +75,21 @@ body {
   -o-user-select: none;
   user-select: none;
 }
-
+.info2 {
+  font-size: 0.6vw;
+  position: absolute;
+  right: 2%;
+  bottom: 5px;
+  padding: 0 1em;
+  line-height: 200%;
+  display: flex;
+  justify-content: flex-end;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
 #list {
   position: absolute;
   right: 3%;
@@ -255,4 +269,26 @@ body {
     flex-basis: 100%;
     height: 0;
   }
-  
+  #ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.6);
+    z-index: 1001;
+}
+
+#popup {
+    width: 555px;
+    height: 110px;
+    background: #fcfcfc;
+    border: 1px solid rgb(217, 235, 247);
+    border-radius: 3px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    
+    margin: auto;
+    margin-top: 25%;
+    padding: 10px;
+}

@@ -70,6 +70,32 @@
     <div class="loader">
     </div>
     </div>
+
+
+
+    <script type="text/javascript">
+      function PopUp(hideOrshow) {
+          if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+          else document.getElementById('ac-wrapper').removeAttribute('style');
+      }
+      window.onload = function () {
+          setTimeout(function () {
+              PopUp('show');
+          }, 2500);
+      }
+      </script>
+      
+      <div id="ac-wrapper" style='display:none'>
+        <div id="popup">
+            <center>
+                 <p>Este configurador se encuentra en desarrollo y podría presentar problemas en dispositivos móviles</p>    
+                <input type="submit" name="submit" value="Entendido" onClick="PopUp('hide')" />
+            </center>
+        </div>
+    </div>
+
+
+
 <div class="controltexturastapiz">
     <p><b>Tapiz: </b></p>
     <!-- This tray will be filled with colors via JS, and the ability to slide this panel will be added in with a lightweight slider script (no dependency used for this) -->
@@ -132,8 +158,9 @@
 <div class="info">
     <p><strong>&nbsp;Controles:  E: &nbsp;</strong>Eliminar objeto. <strong>&nbsp;R: &nbsp;</strong> Rotar objeto. <br><strong>&nbsp;T: &nbsp;</strong>Invertir Objeto.<strong>&nbsp;S: &nbsp;</strong>Activar/Desactivar snaps.</p>
 </div>
-
+<p class="info2">(Estos precios son un ejemplo y no representan el valor real) </p>
 <div id="list">
+   
     <p><strong>&nbsp;Modelos: &nbsp;</strong></p>
     <div id="items">
     </div>
