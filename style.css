@@ -280,8 +280,8 @@ body {
 }
 
 #popup {
-    width: 555px;
-    height: 110px;
+    width: 80%;
+    height: 120px;
     background: #fcfcfc;
     border: 1px solid rgb(217, 235, 247);
     border-radius: 3px;
